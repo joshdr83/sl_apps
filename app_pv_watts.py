@@ -1,7 +1,7 @@
 import json, requests
 from urllib.request import urlopen
-import streamlit as st
 import pandas as pd
+import streamlit as st
 
 # input parameters
 lat = st.sidebar.slider(
@@ -33,7 +33,7 @@ if(requests.get(url).status_code == 200):
     gen = round(pv_out['outputs']['ac_annual'])
 
     st.write('A %s kW solar PV array in %s should output about %s kWh per year!' % (size, location, gen))
-    
+
 else:
     st.write('You appear to have chosen a location without data! Maybe try again?')
 
